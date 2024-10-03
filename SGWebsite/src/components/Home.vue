@@ -25,10 +25,8 @@
 
       const currentIndex = ref(0);
       let intervalId: number | undefined;
-      const slideDirection = ref('slide-left'); // Track the slide direction
 
       const nextSlide = () => {
-        slideDirection.value = 'slide-left'; // Slide to the left for next image
         currentIndex.value = (currentIndex.value + 1) % images.value.length;
       };
 
@@ -43,45 +41,12 @@
           clearInterval(intervalId);
         }
       });
-
+      
       return {
         images,
         currentIndex,
-        slideDirection,
         nextSlide,
       };
-
-      /* current fade transitions are buggy
-      const currentIndex = ref(0);
-      let intervalId: number | undefined;
-      const fadeTransition = ref(true); // State for triggering fade
-
-      const nextSlide = () => {
-        fadeTransition.value = false; // Trigger the fade-out effect
-        setTimeout(() => {
-          currentIndex.value = (currentIndex.value + 1) % images.value.length;
-          fadeTransition.value = true; // Trigger the fade-in effect after the image has been changed
-        }, 700); // Time matches the fade-out duration
-      };
-
-      // Auto-slide every 6 seconds
-      onMounted(() => {
-        intervalId = window.setInterval(nextSlide, 7000); // Change every 7 seconds
-      });
-
-      // Clear the interval when component unmounts
-      onBeforeUnmount(() => {
-        if (intervalId) {
-          clearInterval(intervalId);
-        }
-      });
-
-      return {
-        images,
-        currentIndex,
-        fadeTransition,
-        nextSlide,
-      };*/
     }
   });
 </script>
@@ -90,9 +55,13 @@
   <div id="home">
     <!-- Carousel Section -->
     <div class="relative flex flex-col justify-center items-center">
-      <transition name="slideDirection" mode="out-in">
-        <img :src="images[currentIndex]" class="object-contain w-full h-full opacity-80" :key="currentIndex"/>
-      </transition>
+      <!-- Image carousel using Tailwind for transitions -->
+      <img 
+        :src="images[currentIndex]"
+        class="object-contain w-full h-full opacity-80"
+        :key="currentIndex"
+        loading="lazy"
+      />
 
       <div class="absolute flex flex-col justify-center items-center lg:w-[60%] w-[90%] lg:py-30 py-10 lg:gap-8 gap-2">
         <p class="lg:text-4xl text-lg text-center font-semibold">
@@ -159,24 +128,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-  /* Slide left with smooth animation */
-  .slide-left-enter-active, .slide-left-leave-active {
-    transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) ease-in; /* Smooth cubic-bezier curve */
-  }
-  .slide-left-enter-from {
-    transform: translateX(100%);
-  }
-  .slide-left-leave-to {
-    transform: translateX(-100%);
-  }
-
-  /* current fade transitions are a little buggy
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 700ms ease-in;
-  }
-  .fade-enter-from, .fade-leave-to {
-    opacity: 0;
-  }*/
-</style>
