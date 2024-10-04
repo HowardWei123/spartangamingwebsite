@@ -2,7 +2,7 @@
   import { defineComponent, onBeforeUnmount, onMounted, ref } from 'vue';
   export default defineComponent({
     name: 'HomeComponent',
-    setup() {
+    /*setup() {
       // Carousel images
       const images = ref([
         './BannerPictures/BannerPicture1.png',
@@ -47,22 +47,40 @@
         currentIndex,
         nextSlide,
       };
-    }
+    }*/
   });
 </script>
 
 <template>
   <div id="home">
+
     <!-- Carousel Section -->
-    <div class="relative flex flex-col justify-center items-center">
-      <!-- Image carousel using Tailwind for transitions -->
+    <!--<div class="relative flex flex-col justify-center items-center">
+      Image carousel using Tailwind for transitions
       <img 
         :src="images[currentIndex]"
         class="object-contain w-full h-full opacity-80"
         :key="currentIndex"
         loading="lazy"
       />
+      <div class="absolute flex flex-col justify-center items-center lg:w-[60%] w-[90%] lg:py-30 py-10 lg:gap-8 gap-2">
+        <p class="lg:text-4xl text-lg text-center font-semibold">
+          Queue up with your fellow Spartans in your favorite games. Online or in-person.
+        </p>
+        <button class="bg-blue-500 hover:bg-blue-700 rounded-lg font-medium lg:py-3 lg:px-6 py-2 px-4 transition ease-in duration-200">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd08Gs1S8frwhcFCj0_DjjYtiZme6kCZ3omDIShwoL92vaikA/viewform"
+            target="_blank"
+            class="lg:text-2xl font-medium">
+            Become a Member
+          </a>
+        </button>
+      </div>
+    </div>-->
 
+      
+
+    <div class="flex flex-col justify-center items-center">
+      <img :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
       <div class="absolute flex flex-col justify-center items-center lg:w-[60%] w-[90%] lg:py-30 py-10 lg:gap-8 gap-2">
         <p class="lg:text-4xl text-lg text-center font-semibold">
           Queue up with your fellow Spartans in your favorite games. Online or in-person.
@@ -77,8 +95,7 @@
       </div>
     </div>
 
-
-    <div class="flex flex-col justify-center items-center lg:px-20 px-8">
+    <div class="flex flex-col justify-center items-center lg:px-20 px-8 lg:py-40 py-8">
       <div class="flex lg:flex-row flex-col justify-center items-center lg:gap-36 gap-12 lg:px-10 lg:py-40 pt-10 pb-20">
         
         <div class="xl:w-[60%] lg:w-[90%] flex flex-col justify-center items-center gap-y-4 xl:px-10">
