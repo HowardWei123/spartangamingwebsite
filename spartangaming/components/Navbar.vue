@@ -2,7 +2,7 @@
   import { defineComponent, ref } from 'vue';
   
   export default defineComponent({
-    name: 'NavbarComponent',
+    name: 'Navbar',
     setup() {
       const menuOpen = ref(false);
 
@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <header class="fixed w-full z-50 bg-head-foot-orange lg:p-4 p-1 text-white">
+  <header class="fixed w-full z-50 bg-head-foot-orange lg:p-4 p-1">
     <nav class="flex justify-between items-center">
       <router-link to="/" @click="menuOpen = false;" class="pl-2 transition ease-in duration-200 hover:scale-105">
         <img :src="'./NavLogo.png'" class="w-24"/>

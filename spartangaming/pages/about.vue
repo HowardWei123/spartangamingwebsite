@@ -1,17 +1,12 @@
 <script lang="ts">
-  import { defineComponent } from 'vue';
-  import StaffMember from './StaffMember.vue';
-
-  export default defineComponent({
-    name: 'AboutComponent',
-    components: {
-      StaffMember,
-    },
-  });
+  import StaffMember from '@/components/StaffMember.vue';
+  import Navbar from '~/components/Navbar.vue'
+  import Footerbar from '~/components/Footerbar.vue'
 </script>
 
 <template>
-  <div id="about">
+  <div id="about" class="text-white bg-body-orange font-Montserrat">
+    <Navbar />
     <div class="flex flex-col justify-center items-center">
       <img :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
       <p class="absolute lg:text-8xl text-4xl text-center font-bold">
@@ -61,6 +56,6 @@
         </div>
       </div>
     </div>
-      
+    <Footerbar />
   </div>
 </template>
