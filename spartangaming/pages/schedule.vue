@@ -1,13 +1,7 @@
-<script lang="ts">
-  import Navbar from '~/components/Navbar.vue'
-  import Footerbar from '~/components/Footerbar.vue'
-</script>
-
 <template>
-  <div id="schedule" class="bg-body-orange font-Montserrat text-white">
-    <Navbar />
+  <div id="schedule">
     <div class="flex flex-col justify-center items-center">
-      <img :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
+      <LazyNuxtImg :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
       <p class="absolute lg:text-8xl text-4xl text-center font-bold">
         Schedule
       </p>
@@ -55,6 +49,5 @@
           
       </div>
     </div>
-    <Footerbar />
   </div>
 </template>

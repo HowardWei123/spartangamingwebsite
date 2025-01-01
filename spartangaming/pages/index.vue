@@ -1,89 +1,15 @@
-<script lang="ts">
-  import Navbar from '~/components/Navbar.vue'
-  import Footerbar from '~/components/Footerbar.vue'
-    /*setup() {
-      // Carousel images
-      const images = ref([
-        './BannerPictures/BannerPicture1.png',
-        './BannerPictures/BannerPicture2.png',
-        './BannerPictures/BannerPicture3.png',
-        './BannerPictures/BannerPicture4.png',
-        './BannerPictures/BannerPicture5.png',
-        './BannerPictures/BannerPicture6.png',
-        './BannerPictures/BannerPicture7.png',
-        './BannerPictures/BannerPicture8.png',
-        './BannerPictures/BannerPicture9.png',
-        './BannerPictures/BannerPicture10.png',
-        './BannerPictures/BannerPicture11.png',
-        './BannerPictures/BannerPicture12.png',
-        './BannerPictures/BannerPicture13.png',
-        './BannerPictures/BannerPicture14.png',
-        './BannerPictures/BannerPicture15.png',
-        './BannerPictures/BannerPicture16.png',
-      ]);
-
-      const currentIndex = ref(0);
-      let intervalId: number | undefined;
-
-      const nextSlide = () => {
-        currentIndex.value = (currentIndex.value + 1) % images.value.length;
-      };
-
-      // Auto-slide every 7 seconds
-      onMounted(() => {
-        intervalId = window.setInterval(nextSlide, 7000); // Change every 7 seconds
-      });
-
-      // Clear the interval when the component unmounts
-      onBeforeUnmount(() => {
-        if (intervalId) {
-          clearInterval(intervalId);
-        }
-      });
-      
-      return {
-        images,
-        currentIndex,
-        nextSlide,
-      };
-    }*/
-</script>
-
 <template>
-  <div id="home" class="text-white font-Montserrat bg-body-orange">
-    <Navbar />
-    <!-- Carousel Section -->
-    <!--<div class="relative flex flex-col justify-center items-center">
-      Image carousel using Tailwind for transitions
-      <img 
-        :src="images[currentIndex]"
-        class="object-contain w-full h-full opacity-80"
-        :key="currentIndex"
-        loading="lazy"
-      />
-      <div class="absolute flex flex-col justify-center items-center lg:w-[60%] w-[90%] lg:py-30 py-10 lg:gap-8 gap-2">
-        <p class="lg:text-4xl text-lg text-center font-semibold">
-          Queue up with your fellow Spartans in your favorite games. Online or in-person.
-        </p>
-        <button class="bg-blue-500 hover:bg-blue-700 rounded-lg font-medium lg:py-3 lg:px-6 py-2 px-4 transition ease-in duration-200">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd08Gs1S8frwhcFCj0_DjjYtiZme6kCZ3omDIShwoL92vaikA/viewform"
-            target="_blank"
-            class="lg:text-2xl font-medium">
-            Become a Member
-          </a>
-        </button>
-      </div>
-    </div>-->
+  <div id="home">
     <div class="flex flex-col justify-center items-center">
-      <img :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
+      <ImgCarousel class="object-fill w-full h-full opacity-80"/>
       <div class="absolute flex flex-col justify-center items-center lg:w-[60%] w-[90%] lg:py-30 py-10 lg:gap-8 gap-2">
-        <p class="lg:text-4xl text-lg text-center font-semibold">
+        <p class="lg:text-4xl sm:text-2xl text-sm text-center font-semibold">
           Queue up with your fellow Spartans in your favorite games. Online or in-person.
         </p>
-        <button class="bg-blue-500 hover:bg-blue-700 rounded-lg font-medium lg:py-3 lg:px-6 py-2 px-4 transition ease-in duration-200">
+        <button class="bg-blue-500 hover:bg-blue-700 rounded-lg font-medium lg:py-3 lg:px-6 py-1 px-3 transition ease-in duration-200">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSd08Gs1S8frwhcFCj0_DjjYtiZme6kCZ3omDIShwoL92vaikA/viewform"
             target="_blank"
-            class="lg:text-2xl font-medium">
+            class="lg:text-2xl sm:text-lg text-xs font-medium">
             Become a Member
           </a>
         </button>
@@ -110,23 +36,23 @@
         </div>
 
         <div class="flex flex-wrap justify-center items-center lg:gap-12 gap-4">
-          <img :src="'/icons/lol-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/valorant-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/roblox-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/super-smash-bros-logo.png'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/counter-strike-2-logo.png'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/fortnite-logo.svg'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/lethal-company-logo.jpg'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
-          <img :src="'/icons/fall-guys-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/lol-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/valorant-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/roblox-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/super-smash-bros-logo.png'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/counter-strike-2-logo.png'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/fortnite-logo.svg'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/lethal-company-logo.jpg'" class="lg:w-24 w-20 m-2 transition ease-in duration hover:scale-110"/>
+          <LazyNuxtImg :src="'/icons/fall-guys-logo.png'" class="lg:w-32 w-24 transition ease-in duration hover:scale-110"/>
         </div>
       
       </div>
 
       <div class="flex flex-col justify-center items-center text-center gap-10 lg:w-[60%] lg:py-40 py-8">
-        <h3 class="lg:text-6xl text-3xl font-semibold">
+        <h3 class="lg:text-6xl text-2xl font-semibold">
           Meet New Friends
         </h3>
-        <p class="lg:text-4xl text-2xl font-medium">
+        <p class="lg:text-4xl text-xl font-medium">
           Our incredible community of gamers are always eager to meet and share new experiences together.
         </p>
         <button class="bg-blue-500 hover:bg-blue-700 rounded-lg lg:py-3 lg:px-6 py-2 px-4 transition ease-in duration-200">
@@ -138,6 +64,5 @@
         </button>
       </div>
     </div>
-    <Footerbar />
   </div>
 </template>

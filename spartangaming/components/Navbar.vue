@@ -19,10 +19,10 @@
 </script>
 
 <template>
-  <header class="fixed w-full z-50 bg-head-foot-orange lg:p-4 p-1">
+  <header class="fixed w-full z-10 bg-head-foot-orange lg:p-4 p-1">
     <nav class="flex justify-between items-center">
       <router-link to="/" @click="menuOpen = false;" class="pl-2 transition ease-in duration-200 hover:scale-105">
-        <img :src="'./NavLogo.png'" class="w-24"/>
+        <img :src="'./NavLogo.png'" class="lg:w-24 w-16"/>
       </router-link>
       <div class="hidden lg:flex items-center font-bold gap-16 pr-4 text-3xl">
         <router-link to="/about" class="transition ease-in duration-200 hover:text-blue-500">
@@ -43,15 +43,14 @@
         </div>
       </div>
 
-      <button @click="toggleMenu" class="lg:hidden w-10 pr-2 cursor-pointer transition ease-in duration-200 hover:scale-110">
+      <button @click="toggleMenu" class="lg:hidden lg:w-10 w-8 pr-2 cursor-pointer transition ease-in duration-200 hover:scale-110">
         <img :src="'./icons/icons8-menu-48.png'"/>
       </button>
-        
     </nav>
 
 
     <div 
-      :class="menuOpen ? 'lg:hidden flex flex-col w-full font-semibold gap-4 px-8 py-4 text-2xl' : 'hidden'"
+      :class="menuOpen ? 'lg:hidden flex flex-col w-full font-semibold gap-4 px-4 py-2' : 'hidden'"
     >
       <router-link to="/about" @click="toggleMenu" class="transition ease-in duration-200 hover:text-blue-500">
         About
