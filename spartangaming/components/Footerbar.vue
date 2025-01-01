@@ -2,12 +2,12 @@
   import { defineComponent } from 'vue';
   
   export default defineComponent({
-    name: 'FooterbarComponent',
+    name: 'Footerbar',
   });
 </script>
 
 <template>
-  <footer class="bg-head-foot-orange p-4 text-white">
+  <footer class="bg-head-foot-orange p-4">
     <div class="flex lg:flex-row flex-col justify-center items-center gap-x-8 gap-y-2">
       <a href="https://tinyurl.com/277hrv5f" target="_blank" class="transition ease-in duration-200 font-medium hover:text-blue-500 hover:scale-105">
         Community Guidelines

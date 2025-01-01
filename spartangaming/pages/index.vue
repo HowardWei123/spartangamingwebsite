@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { defineComponent, onBeforeUnmount, onMounted, ref } from 'vue';
-  export default defineComponent({
-    name: 'HomeComponent',
+  import Navbar from '~/components/Navbar.vue'
+  import Footerbar from '~/components/Footerbar.vue'
     /*setup() {
       // Carousel images
       const images = ref([
@@ -48,12 +47,11 @@
         nextSlide,
       };
     }*/
-  });
 </script>
 
 <template>
-  <div id="home">
-
+  <div id="home" class="text-white font-Montserrat bg-body-orange">
+    <Navbar />
     <!-- Carousel Section -->
     <!--<div class="relative flex flex-col justify-center items-center">
       Image carousel using Tailwind for transitions
@@ -76,9 +74,6 @@
         </button>
       </div>
     </div>-->
-
-      
-
     <div class="flex flex-col justify-center items-center">
       <img :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
       <div class="absolute flex flex-col justify-center items-center lg:w-[60%] w-[90%] lg:py-30 py-10 lg:gap-8 gap-2">
@@ -143,5 +138,6 @@
         </button>
       </div>
     </div>
+    <Footerbar />
   </div>
 </template>

@@ -1,13 +1,11 @@
 <script lang="ts">
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'ScheduleComponent',
-  });
+  import Navbar from '~/components/Navbar.vue'
+  import Footerbar from '~/components/Footerbar.vue'
 </script>
 
 <template>
-  <div id="schedule">
+  <div id="schedule" class="bg-body-orange font-Montserrat text-white">
+    <Navbar />
     <div class="flex flex-col justify-center items-center">
       <img :src="'/BannerPictures/PagesBanner.svg'" class="object-fill w-full h-full opacity-90"/>
       <p class="absolute lg:text-8xl text-4xl text-center font-bold">
@@ -17,11 +15,11 @@
 
     <div class="flex items-center justify-center lg:py-40 py-10 px-20">
       <div class="flex flex-col justify-center items-center bg-orange-300 lg:px-12 lg:py-8 px-6 py-4 shadow-lg rounded-lg gap-4">
-        <div class="border-4 border-orange-500 rounded-lg lg:px-16 px-8 lg:py-10 py-5">
-          <h1 class="lg:text-4xl text-xl font-bold text-black mb-4">Fall 2024</h1>
-          <h2 class="lg:text-3xl text-lg font-bold text-black mb-6">InHouse Schedule</h2>
+        <div class="border-4 border-orange-500 text-black rounded-lg lg:px-16 px-8 lg:py-10 py-5">
+          <h1 class="lg:text-4xl text-xl font-bold mb-4">Fall 2024</h1>
+          <h2 class="lg:text-3xl text-lg font-bold mb-6">InHouse Schedule</h2>
 
-          <div class="grid lg:grid-cols-2 gap-y-8 gap-x-20 text-black">
+          <div class="grid lg:grid-cols-2 gap-y-8 gap-x-20">
             <!-- Left Column -->
             <div>
               <h3 class="lg:text-xl font-bold text-orange-600">MONDAYS</h3>
@@ -52,10 +50,11 @@
           </div>
 
           <h3 class="lg:text-2xl font-bold text-orange-600 mt-6">GUILDHOUSE MEETUPS</h3>
-          <p class="lg:text-lg text-sm text-black font-semibold">Tuesdays @6pm</p>
+          <p class="lg:text-lg text-sm font-semibold">Tuesdays @6pm</p>
         </div>
           
       </div>
     </div>
+    <Footerbar />
   </div>
 </template>
