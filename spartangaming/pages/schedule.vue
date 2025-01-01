@@ -1,13 +1,13 @@
 <template>
   <div id="schedule">
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center lg:pt-20 pt-10">
       <LazyNuxtImg :src="'/BannerPictures/PagesBanner.svg'" class="opacity-80"/>
       <p class="absolute lg:text-8xl text-4xl text-center font-bold">
         Schedule
       </p>
     </div>
 
-    <div class="flex items-center justify-center lg:py-40 py-10 px-20">
+    <div class="flex items-center justify-center lg:py-32 py-10 px-20">
       <div class="flex flex-col justify-center items-center bg-orange-300 lg:px-12 lg:py-8 px-6 py-4 shadow-lg rounded-lg gap-4">
         <div class="border-4 border-orange-500 text-black rounded-lg lg:px-16 px-8 lg:py-10 py-5">
           <h1 class="lg:text-4xl text-xl font-bold mb-4">Fall 2024</h1>
