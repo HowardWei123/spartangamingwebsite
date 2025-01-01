@@ -1,6 +1,6 @@
 <template>
   <div id="socials">
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center lg:pt-20 pt-10">
       <LazyNuxtImg :src="'/BannerPictures/PagesBanner.svg'" class="opacity-80"/>
       <p class="absolute lg:text-8xl text-4xl text-center font-bold">
         Socials

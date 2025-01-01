@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center lg:pt-20 pt-10">
       <LazyNuxtImg :src="'/BannerPictures/PagesBanner.svg'" class="opacity-80"/>
       <p class="absolute lg:text-8xl text-4xl text-center font-bold">
         About
@@ -8,15 +8,15 @@
     </div>
     
 
-    <div class="flex flex-col justify-center items-center lg:px-20 px-4 lg:py-40 py-10">
-      <div class="text-center lg:w-[60%] lg:py-20 py-10">
+    <div class="flex flex-col justify-center items-center lg:px-20 px-4 lg:py-32 py-10">
+      <div class="text-center lg:w-[60%] lg:py-32 py-10">
         <p class="lg:text-4xl text-2xl font-medium">
           Hello! We are Spartan Gaming, the biggest social gaming club at SJSU!
           Our goal is to bring students together through a shared passion for gaming.
         </p>
       </div>
 
-      <div class="flex flex-col justify-center items-center text-center gap-12 pt-20">
+      <div class="flex flex-col justify-center items-center text-center gap-12 lg:py-32 py-10">
         <h3 class="lg:text-6xl text-3xl font-semibold">
           Meet Our Officers
         </h3>
