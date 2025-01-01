@@ -19,7 +19,7 @@
     <div class="flex flex-col justify-center items-center lg:px-20 px-8 lg:py-40 py-8">
       <div class="flex lg:flex-row flex-col justify-center items-center lg:gap-36 gap-12 lg:px-10 lg:py-40 pt-10 pb-20">
         
-        <div class="xl:w-[60%] lg:w-[90%] flex flex-col justify-center items-center gap-y-4 xl:px-10">
+        <div class="xl:w-[60%] lg:w-[90%] flex flex-col justify-center items-center lg:gap-y-8 gap-y-4 xl:px-10">
           <h3 class="lg:text-5xl text-2xl font-semibold">
             Find Your Video Game Haven
           </h3>
